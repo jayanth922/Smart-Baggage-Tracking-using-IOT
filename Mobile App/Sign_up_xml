@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bac"
+    tools:context=".Signup">
+
+    <TextView
+        android:id="@+id/signin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="21dp"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignBottom="@id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:hint="Enter Gmail"
+        app:layout_constraintBottom_toTopOf="@+id/gmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signin"
+        tools:ignore="MissingConstraints,NotSibling" />
+
+    <EditText
+        android:id="@+id/gmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/username"
+        android:layout_marginBottom="7dp"
+        android:hint="Password"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        tools:ignore="MissingConstraints,NotSibling" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
+        android:hint="username"
+        app:layout_constraintBottom_toTopOf="@+id/phnumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gmail" />
+
+    <EditText
+        android:id="@+id/phnumber"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="38dp"
+        android:hint="Phone Number"
+        app:layout_constraintBottom_toTopOf="@+id/register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="112dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="336dp"
+        android:foregroundGravity="center"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/phnumber"
+        app:layout_constraintTop_toBottomOf="@+id/phnumber"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
