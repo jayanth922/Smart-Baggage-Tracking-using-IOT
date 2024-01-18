@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgapp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/signin"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:text="Sign In"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/usernameimg"
+        android:layout_width="115dp"
+        android:layout_height="92dp"
+        android:layout_alignBottom="@id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/username" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_alignBottom="@id/signin"
+        android:layout_marginBottom="-217dp"
+        android:drawableLeft="@drawable/ic_baseline_account_box_24"
+        android:hint="Enter Gmail"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/username"
+        android:layout_marginBottom="-57dp"
+        android:inputType="textPassword"
+        android:drawableLeft="@drawable/ic_baseline_local_parking_24"
+        android:hint="Enter Password" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-73dp"
+        android:text="Login" />
+
+    <TextView
+        android:id="@+id/forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-47dp"
+        android:text="Forgot Password?" />
+
+    <TextView
+        android:id="@+id/more"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/glogo"
+        android:layout_alignBottom="@id/forgot"
+        android:layout_marginRight="114dp"
+        android:layout_marginBottom="-53dp"
+        android:text="Sign in with more options" />
+
+    <ImageView
+        android:id="@+id/glogo"
+        android:layout_width="48dp"
+        android:layout_height="36dp"
+        android:layout_alignBottom="@id/forgot"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="-43dp"
+        android:src="@drawable/glogo" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/glogo"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="-71dp"
+        android:text="Sign up" />
+
+
+</RelativeLayout>
