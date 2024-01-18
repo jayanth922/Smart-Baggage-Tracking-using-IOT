@@ -1,0 +1,90 @@
+package com.example.locateme;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.Menu;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.navigation.NavigationView;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import com.example.locateme.databinding.ActivityTrack1Binding;
+
+public class track1 extends AppCompatActivity {
+
+    private AppBarConfiguration mAppBarConfiguration;
+private ActivityTrack1Binding binding;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+     binding = ActivityTrack1Binding.inflate(getLayoutInflater());
+     setContentView(binding.getRoot());
+
+        setSupportActionBar(binding.appBarTrack1.toolbar);
+        binding.appBarTrack1.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Email = new Intent(Intent.ACTION_SEND);
+                Email.setType("text/email");
+                Email.putExtra(Intent.EXTRA_EMAIL, new String[]{"locateme@gmail.com"});
+                Email.putExtra(Intent.EXTRA_SUBJECT, "Locate Me : Add your Subject");
+                Email.putExtra(Intent.EXTRA_TEXT, "Respected authority the problem I faced is ," + "");
+                startActivity(Intent.createChooser(Email, "Please choose an app to raise request:"));
+            }
+        });
+        DrawerLayout drawer = binding.drawerLayout;
+        NavigationView navigationView = binding.navView;
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                .setOpenableLayout(drawer)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_track1);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.track1, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id=item.getItemId();
+        if(id==R.id.action_settings) {
+            Intent intent=new Intent(track1.this,Settings.class);
+            startActivity(intent);
+            return true;
+        }
+        if(id==R.id.feedback){
+            Intent intent=new Intent(track1.this,feedback.class);
+            startActivity(intent);
+            return true;
+        }
+        if(id==R.id.Contact_Us){
+            Intent intent=new Intent(track1.this,ContactUs.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if(id==R.id.logout){
+            Intent intent=new Intent(track1.this,MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_track1);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
+    }
+}
